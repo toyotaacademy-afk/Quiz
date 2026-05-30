@@ -1,0 +1,182 @@
+    const questions = [
+        {
+            q: "1. 當你加入一個新團隊，發現主管雖然地位高，但能力平庸且疑心病重，你會？",
+            options: [
+                { text: "表面配合，暗中組建自己的核心人脈圈，尋求破局機會。", score: { xinling: 3, wei: 0, hou: 1, zhu: 0 } },
+                { text: "緊抓手頭權力，時刻提防任何可能威脅到自己位置的人。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "保持低調，觀察誰才是團隊中真正有實力的「隱藏大佬」。", score: { xinling: 1, wei: 0, hou: 3, zhu: 1 } },
+                { text: "做好本分，不參與政治角力，關鍵時刻直接用硬實力說話。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "2. 遇到一位很有才華但性格孤傲、身分低微的「邊緣人」，你會？",
+            options: [
+                { text: "放下身段主動結交，甚至願意為他做些有損面子的事。", score: { xinling: 3, wei: 0, hou: 1, zhu: 1 } },
+                { text: "覺得他太不合群、挑戰管理權威，刻意保持距離或冷落他。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "暗中觀察他的言行，確認他是真有本事還是單純在擺譜。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "看得順眼就直接當朋友，不順眼就各自安好，不搞花哨的客套。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "3. 當朋友面臨重大危機（例如項目即將崩潰），但公司規則不允許你插手，你會？",
+            options: [
+                { text: "為了大義與情誼，冒著違規被懲罰的風險也要暗中調動資源幫忙。", score: { xinling: 3, wei: 0, hou: 0, zhu: 2 } },
+                { text: "優先考慮自身安全，在局勢徹底明朗之前絕對按兵不動。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "站在幕後，幫他策劃一條看似瘋狂但絕對一擊必殺的「奇策」。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "廢話少說，直接擼起袖子去幫他解決那個最棘手的物理障礙。", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "4. 你最無法忍受哪一種生活或工作狀態？",
+            options: [
+                { text: "被體制死死束縛，無法發揮自己的號召力去幫助別人。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "身邊的下屬或同事表現得比自己更受歡迎、更有威望。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "自己的才華被埋沒在平庸的日常中，遇不到懂自己的伯樂。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "遇到整天只會出一張嘴、遇到事情就躲在後面的軟弱主管。", score: { xinling: 0, wei: 1, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "5. 在進行團隊分組報告或專案時，你通常扮演什麼樣的角色？",
+            options: [
+                { text: "到處協調各組員、鼓舞士氣，確保每個人都覺得被重視的靈魂核心。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "爭取成為官方認定的組長，掌控最終報告的決定權與主導權。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "負責最核心的邏輯架構與資料分析，但上台報告讓別人去威風。", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "不愛開冗長的會議，分配好工作後默默把最硬、最累的髒活做完。", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "6. 當你在職場或學校聽到針對你的不實謠言或批評時，你的第一反應是？",
+            options: [
+                { text: "透過自己平時累積的強大人脈與好人緣，主動澄清並化解誤會。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "立刻警覺有人在暗算我，開始排查幕後黑手以穩固自己的地位。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "冷靜旁觀，不動聲色地蒐集證據，等待最佳時機給對方致命一擊。", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "怒火中燒，想直接找對方當面對質，用事實狠狠打對方的臉。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "7. 請問你挑選最親密、最信任的朋友時，最看重什麼特質？",
+            options: [
+                { text: "對方是否有獨特的才華、抱負或迷人的靈魂，身分背景不重要。", score: { xinling: 3, wei: 0, hou: 1, zhu: 0 } },
+                { text: "對方是否足夠尊重我、懂分寸，且不會在關鍵時刻背叛我。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "對方是否有足夠的精神深度，能看穿我的心思、進行深度對話。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "對方是否爽快、直來直往不耍心機，遇到事情夠義氣、敢衝。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "8. 如果你獲得了一項巨大的個人成就（如升職加薪或大型競賽獲獎），你會？",
+            options: [
+                { text: "把功勞大方歸功於所有曾幫助過我的人，請所有人大吃一頓。", score: { xinling: 3, wei: 0, hou: 1, zhu: 1 } },
+                { text: "好好享受這個高光時刻，並藉此機會鞏固自己在團隊中的權威。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "短暫開心後，立刻開始評估這個成就會帶來的隱形成本與下一步風險。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "只和兩三個最要好的兄弟低調慶祝，隔天繼續像平常一樣默默努力。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "9. 面對一個看似無法戰勝的強大競爭對手或龐大體制，你會選擇？",
+            options: [
+                { text: "聯合所有能聯合的外部盟友，組織一場聲勢浩大的反擊聯盟。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "避免正面衝突以保存自身實力，甚至做出適度妥協來換取安全。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "仔細研究對手的規章與死角，尋找一個出其不意的奇特策略來翻盤。", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "不管三七二十一，拿出全部實力硬碰硬地拚一次，輸了也認了。", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "10. 對你而言，以下哪一項最符合你對「成功人生」的定義？",
+            options: [
+                { text: "名滿天下，留下被眾人景仰的傳奇名聲與對社會的重大貢獻。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "穩坐高位，擁有極高的社會地位、資源與不容挑戰的掌控權。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "看透世事，自己的智慧與洞察力在歷史或現實中得到完全的實現。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "活得快意恩仇，能徹底保護身邊重要的人，不向任何權貴低頭。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "11. 當你面臨極大的心理壓力、感到嚴重的精神崩潰或倦怠時，你會？",
+            options: [
+                { text: "舉辦熱鬧的聚會，和朋友們喝酒、聊天，用社交能量來沖淡壓力。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "躲回自己的絕對安全區，重新盤點自己能掌控的事物以找回安全感。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "切斷與外界的聯繫，獨自看書、冥想，深層剖析自己目前的處境。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "進行高強度的體力勞動、激烈運動或瘋狂打遊戲，把壓力宣洩出來。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "12. 團隊中一位相處不錯的夥伴犯了嚴重錯誤，連帶影響到你的成果，你會？",
+            options: [
+                { text: "第一時間出面幫他扛下部分責任，安慰他並一起想辦法補救。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "界線分明，立刻向高層或外界澄清責任歸屬，確保自己不受牽連。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "幫他找出系統性漏洞，在幕後指導他如何低調且精準地修復錯誤。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "當面直言不諱地指出他的愚蠢失誤，隨後擼起袖子幫他把爛攤子收拾好。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "13. 在一場激烈的辯論或跨部門會議中，你通常習慣如何說服別人？",
+            options: [
+                { text: "運用強大的情感共鳴與群眾魅力，激發大家的熱情與認同感。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "搬出公司的既定規章、傳統與既有的階級權威，讓對方無話可說。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "使用嚴密的邏輯陷阱、心理預判與出其不意的觀點，徹底瓦解對方。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "不講虛無縹緲的理論，直接砸出最硬核的數據、事實與實際執行成果。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "14. 如果你今天決定自行創業，你覺得自己最適合擔任哪一種創始角色？",
+            options: [
+                { text: "負責對外拉投資、包裝願景、吸引各路頂尖人才加盟的明星 CEO。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "牢牢掌握最大股權、把控公司大方向與內部行政審查的董事長。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "不常露面，專門在幕後規劃商業模式、分析對手死角的首席戰略官(CSO)。", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "帶領研發或業務團隊在第一線衝鋒陷陣、死磕產品落地的首席運營官(COO)。", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "15. 以下哪一種讚美，會讓你發自內心地感到最高興、最受肯定？",
+            options: [
+                { text: "「你身上有一種讓人心甘情願追隨你的磁場，大家都太喜歡你了。」", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "「這裡要是沒有你坐鎮主持大局，整個團隊早就亂成一團了。」", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "「你簡直是個神算，事情發展竟然跟你幾個月前預言的一模一樣。」", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "「你真的太靠得住了，只要有你在第一線，我們就充滿安全感。」", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "16. 當關係普通的人請求你運用你珍貴的「私人人脈」幫他一個忙，你會？",
+            options: [
+                { text: "只要對方確實有才華或這件事符合正義，我會毫不猶豫動用關係幫忙。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "嚴詞拒絕或找藉口推託，因為動用人脈會增加我個人的政治風險與負擔。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "先理性評估幫這個忙對我自己有何長遠利益，或是能否換取等價人情。", score: { xinling: 1, wei: 1, hou: 3, zhu: 0 } },
+                { text: "看心情，如果舉手之勞就直接幫，如果太麻煩或要假惺惺應酬就直接拒絕。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "17. 你對於社會上的「傳統習俗」或組織內「約定俗成的死板規矩」抱持什麼態度？",
+            options: [
+                { text: "規矩是人定的。如果為了更高的道德大義或救人，打破規矩也在所不惜。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "規矩必須被嚴格執行。它是維持社會與團隊秩序、保護掌權者的基石。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "規矩是工具。我會深入研究它，並從中找出能為我所用的漏洞或合法捷徑。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "規矩很繁瑣。如果它阻礙了我做事率直的效率，我會直接無視或繞開它。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "18. 在內心深處，你最害怕、最無法接受自己陷入哪一種處境？",
+            options: [
+                { text: "被貼上自私自利的標籤，失去了身邊朋友與大眾對我的信任與愛戴。", score: { xinling: 3, wei: 0, hou: 0, zhu: 1 } },
+                { text: "失去對局勢的掌控權、被架空，或是遭到自己最親近的部下背叛。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "自己引以為傲的局勢判斷出現重大失誤，在智商或策略上被對手碾壓。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "在關鍵時刻因為自己的軟弱或無能，眼睜睜看著重要的人事物被摧毀。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "19. 當遇到突發的重大緊急危機，且留給你的思考時間只有幾分鐘時，你會？",
+            options: [
+                { text: "迅速召集所有人，用極具渲染力的話語安撫人心，帶領大家一起往前衝。", score: { xinling: 3, wei: 1, hou: 0, zhu: 0 } },
+                { text: "第一時間封鎖核心資源與核心人物，封鎖消息，優先保全主要資產。", score: { xinling: 0, wei: 3, hou: 1, zhu: 0 } },
+                { text: "強迫自己極度冷靜，用幾秒鐘找出那條唯一能解開死結的「瘋狂奇策」。", score: { xinling: 0, wei: 0, hou: 3, zhu: 1 } },
+                { text: "不等指示，直接憑著直覺與本能衝到危機最前線，用實力展開肉搏壓制。", score: { xinling: 1, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        },
+        {
+            q: "20. 當一個你投入極大心血的專案或大考最後不幸徹底失敗了，你內心的核心反應是？",
+            options: [
+                { text: "無比愧疚，覺得自己辜負了團隊和大家的期待，但會努力打起精神安慰組員。", score: { xinling: 3, wei: 0, hou: 1, zhu: 0 } },
+                { text: "焦慮無比，擔心這個失敗會嚴重抹黑我的個人履歷，並開始盤算該由誰來背鍋。", score: { xinling: 0, wei: 3, hou: 0, zhu: 0 } },
+                { text: "陷入深思，瘋狂覆盤整個過程中的邏輯漏洞，發誓一定要找出戰術上的致命傷。", score: { xinling: 1, wei: 0, hou: 3, zhu: 0 } },
+                { text: "極度沮喪與憤怒，但很快就自認倒楣，拍拍灰塵準備在下一個戰場加倍討回來。", score: { xinling: 0, wei: 0, hou: 0, zhu: 3 } }
+            ]
+        }
+    ];
